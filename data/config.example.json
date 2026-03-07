@@ -1,0 +1,87 @@
+{
+  "api": {
+    "base_url": "https://api.302.ai",
+    "api_key": "sk-YOUR_API_KEY_HERE"
+  },
+  "models": {
+    "primary_story": {
+      "_comment": "主力剧情模型",
+      "model": "grok-4-1-fast-non-reasoning",
+      "temperature": 0.65,
+      "top_p": 0.9
+    },
+    "secondary_story": {
+      "_comment": "辅助剧情模型",
+      "model": "grok-4-1-fast-non-reasoning",
+      "temperature": 0.65,
+      "top_p": 0.9
+    },
+    "analysis": {
+      "_comment": "指令分析模型",
+      "model": "grok-4-1-fast-non-reasoning",
+      "temperature": 0.1,
+      "top_p": 0.95
+    },
+    "analysis_reasoning": {
+      "_comment": "需要强推理的分析任务",
+      "model": "grok-4-1-fast-reasoning",
+      "temperature": 0.1,
+      "top_p": 0.95
+    },
+    "embedding": {
+      "model": "Qwen/Qwen3-Embedding-8B"
+    },
+    "image": {
+      "model": "z-image-turbo",
+      "num_inference_steps": 6
+    }
+  },
+  "telegram": {
+    "bot_token": "YOUR_TELEGRAM_BOT_TOKEN",
+    "admin_bot_token": "YOUR_ADMIN_BOT_TOKEN",
+    "owner_id": 0
+  },
+  "typing_delay": {
+    "min_chars": 80,
+    "max_chars": 500,
+    "break_preference": "paragraph"
+  },
+  "world": {
+    "start_time": "2026-01-01T08:00:00",
+    "walk_speed": 1,
+    "walking_speed_kmh": 6,
+    "large_jump_minutes": 120,
+    "default_flexible_window": 30,
+    "session_compress_threshold": 30
+  },
+  "memory_retrieval": {
+    "rerank_model": "Qwen/Qwen3-Reranker-8B",
+    "recall_top_k": 30,
+    "final_top_k": 10,
+    "embedding_weight": 0.7,
+    "keyword_weight": 0.3,
+    "threshold": 20,
+    "min_score": 0.3
+  },
+  "model_pricing": {
+    "grok-4-1-fast-reasoning": {
+      "input": 0.2,
+      "output": 0.5
+    },
+    "grok-4-1-fast-non-reasoning": {
+      "input": 0.2,
+      "output": 0.5
+    },
+    "Qwen/Qwen3-Embedding-8B": {
+      "input": 0,
+      "output": 0.04
+    },
+    "Qwen/Qwen3-Reranker-8B": {
+      "input": 0,
+      "output": 0.04
+    },
+    "z-image-turbo": {
+      "per_call": 0.05
+    }
+  }
+}

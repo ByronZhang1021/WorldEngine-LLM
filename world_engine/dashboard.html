@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Engine</title>
+    <link rel="stylesheet" href="/static/dashboard.css?v=12">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="header-left">
+            <h1>🌍 World Engine</h1>
+            <span class="stats" id="headerTime"></span>
+        </div>
+        <div class="header-tabs">
+            <button class="tab-btn active" data-tab="sessions">💬 会话</button>
+            <button class="tab-btn" data-tab="events">📝 事件</button>
+            <button class="tab-btn" data-tab="characters">👤 角色</button>
+            <button class="tab-btn" data-tab="map">🗺️ 地图</button>
+            <button class="tab-btn" data-tab="world-settings">⚙️ 设定</button>
+        </div>
+        <div class="header-right">
+            <div class="mode-toggle">
+                <span class="mode-label active" id="togCurrent" onclick="switchArchiveMode('current')">当前世界</span>
+                <span class="mode-label" id="togArchive" onclick="switchArchiveMode('archive')">世界管理</span>
+            </div>
+            <button class="tab-btn" data-tab="settings">全局设置</button>
+        </div>
+    </div>
+
+    <!-- Archive Bar -->
+    <div class="archive-bar" id="archiveBar" style="display:none">
+        <select id="archiveSelect">
+            <option value="">— 暂无存档 —</option>
+        </select>
+        <button class="ab-btn" onclick="archiveNew()">新建存档</button>
+        <button class="ab-btn" onclick="archiveSaveCurrent()">保存当前为存档</button>
+        <button class="ab-btn" onclick="archiveRename()">重命名</button>
+        <button class="ab-btn ab-btn-primary" onclick="archiveApply()">加载到当前</button>
+        <button class="ab-btn ab-btn-warn" onclick="archiveDelete()">删除</button>
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+        <div class="tab-content active" id="tab-sessions"></div>
+        <div class="tab-content" id="tab-events"></div>
+        <div class="tab-content" id="tab-characters"></div>
+        <div class="tab-content" id="tab-map"></div>
+        <div class="tab-content" id="tab-world-settings"></div>
+        <div class="tab-content" id="tab-settings"></div>
+    </div>
+
+    <button id="globalSaveBtn" onclick="globalSave()">💾 保存</button>
+    <div class="toast" id="toast"></div>
+
+    <!-- JS modules (order matters: app.js defines helpers used by all others) -->
+    <script src="/static/js/app.js?v=11"></script>
+    <script src="/static/js/archives.js?v=11"></script>
+    <script src="/static/js/sessions.js?v=10"></script>
+    <script src="/static/js/events.js?v=11"></script>
+    <script src="/static/js/characters.js?v=12"></script>
+    <script src="/static/js/map.js?v=10"></script>
+    <script src="/static/js/settings.js?v=12"></script>
+
+</body>
+
+</html>
