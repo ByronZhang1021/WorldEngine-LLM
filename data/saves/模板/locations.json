@@ -1,0 +1,47 @@
+[
+  {
+    "name": "地点名称",
+    "x": 1,
+    "y": 3,
+    "description": "地点描述。支持 TTL 过期机制，用于临时性地点变化，如'今天这里正在装修'。",
+    "entries": [
+      {
+        "text": "地点描述。支持 TTL 过期机制，用于临时性地点变化，如'今天这里正在装修'。",
+        "ttl": "永久",
+        "created": "2026-01-01T08:00:00"
+      }
+    ],
+    "sub_locations": [
+      {
+        "name": "子地点1",
+        "description": "子地点描述，注入到DM提示词中",
+        "is_default": true
+      },
+      {
+        "name": "子地点2",
+        "description": "",
+        "is_default": false
+      }
+    ]
+  },
+  {
+    "name": "第二个地点",
+    "x": 3,
+    "y": 0,
+    "description": "地点描述",
+    "entries": [
+      {
+        "text": "地点描述",
+        "ttl": "永久",
+        "created": "2026-01-01T08:00:00"
+      }
+    ],
+    "sub_locations": [
+      {
+        "name": "子地点",
+        "description": "子地点描述",
+        "is_default": true
+      }
+    ]
+  }
+]

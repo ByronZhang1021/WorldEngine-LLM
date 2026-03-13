@@ -1,0 +1,86 @@
+{
+  "world_name": "模板",
+  "current_time": "2026-01-01T08:00:00",
+  "characters": {
+    "（NPC名字，必须和 characters/ 目录下的 JSON 文件名一致）": {
+      "location": "（当前所在地点，必须和 locations.json 中的 name 完全一致）",
+      "sub_location": "（当前所在子地点，必须和 locations.json 中该地点的 sub_locations.name 一致，没有可留空）",
+      "activity": "（当前正在做什么，初始可留空，运行后由引擎自动生成）",
+      "emotion": "（当前情绪状态，初始可留空，运行后由引擎自动更新）",
+      "until": "（当前活动持续到什么时间，ISO格式，初始可留空）",
+      "activity_start": "（当前活动开始时间，ISO格式，初始可留空）",
+      "known_locations": [
+        "（该角色知道的地点列表，决定了活动链中该角色能去哪些地方）",
+        "（必须和 locations.json 中的 name 完全一致）",
+        "（注意：角色所在地点不需要写在这里，会自动包含）"
+      ],
+      "known_sub_locations": {
+        "（地点名）": [
+          "（该角色在这个地点知道的子地点列表）",
+          "（不在此列表的子地点，角色不会主动前往）"
+        ]
+      }
+    },
+    "（玩家角色名，同样需要在 characters/ 下有对应的 JSON 文件）": {
+      "location": "（玩家初始位置）",
+      "sub_location": "",
+      "activity": "",
+      "emotion": "",
+      "until": "",
+      "activity_start": "",
+      "known_locations": [
+        "（玩家知道的地点，决定了玩家可以移动到哪里）"
+      ],
+      "known_sub_locations": {}
+    },
+    "角色2": {
+      "location": "",
+      "sub_location": "",
+      "activity": "",
+      "emotion": "",
+      "until": "",
+      "known_locations": [
+        "地点名称"
+      ],
+      "known_sub_locations": {
+        "地点名称": [
+          "子地点2"
+        ]
+      }
+    },
+    "角色1": {
+      "location": "",
+      "sub_location": "",
+      "activity": "",
+      "emotion": "",
+      "until": "",
+      "known_locations": [
+        "地点名称",
+        "第二个地点"
+      ],
+      "known_sub_locations": {}
+    },
+    "（角色名）3": {
+      "location": "",
+      "sub_location": "",
+      "activity": "",
+      "emotion": "",
+      "until": "",
+      "known_locations": [],
+      "known_sub_locations": {}
+    },
+    "（角色名）2": {
+      "location": "",
+      "sub_location": "",
+      "activity": "",
+      "emotion": "",
+      "until": "",
+      "known_locations": [],
+      "known_sub_locations": {}
+    }
+  },
+  "player_character": "角色1",
+  "dm_context": {},
+  "overlap_cooldown": {},
+  "scheduled_events": []
+}

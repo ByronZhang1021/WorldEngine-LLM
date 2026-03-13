@@ -1,0 +1,43 @@
+# ── Python ──
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# ── 运行时数据 ──
+logs/
+media/
+
+# ── 敏感配置（使用 config.example.json 作为模板）──
+data/config.json
+
+# ── 世界数据（用户存档，不应提交）──
+data/current/
+data/saves/
+
+# ── 本地模型文件 ──
+models/
+
+# ── 工具二进制文件 ──
+tools/
+
+# ── IDE ──
+.vscode/
+.idea/
+
+# ── AI Agent 规则 ──
+.agents/
+*.swp
+*.swo
+
+# ── 系统 ──
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── 其他 ──
+*.bak
+*.tmp
